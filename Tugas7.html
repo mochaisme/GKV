@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bezier Curve - T</title>
+  <style>
+    canvas {
+      border: 1px solid #000;
+      background-image: linear-gradient(#bfff00, rgb(0, 255, 229));
+    }
+    *{
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+  </style>
+</head>
+<body>
+    <h1>Tugas GKV Pertemuan 6</h1>
+    <h2>T Mochamad Rafly <br> G6401221121</h2>
+  <canvas id="myCanvas" width="600" height="610"></canvas>
+  <script>
+    const myCanvas = document.getElementById("myCanvas");
+    const ctx = myCanvas.getContext("2d");
+
+    var gradient1 = ctx.createLinearGradient(0,0,410,0);
+    gradient1.addColorStop("0", "#1a9641");
+    gradient1.addColorStop("0.5", "#ffffbf");
+    gradient1.addColorStop("1", "#d7191c");
+
+
+
+    
+    ctx.beginPath();
+    ctx.lineWidth = 20;
+    ctx.strokeStyle = gradient1;
+    ctx.moveTo(250, 200);
+    ctx.lineTo(250, 400);
+    ctx.bezierCurveTo(350,200,200,300,150,200);
+    ctx.stroke();
+    ctx.closePath();
+
+
+    //WARNA MERAH
+    ctx.beginPath();
+    ctx.lineWidth = 20;
+    ctx.strokeStyle = gradient1;
+    ctx.moveTo(150,200);
+    ctx.bezierCurveTo(200,200,200,300,150,200);
+    ctx.lineTo(350,200);
+    ctx.bezierCurveTo(300,100,200,300,150,200);
+    ctx.stroke();
+    ctx.closePath();
+
+   
+    ctx.beginPath();
+    ctx.lineWidth = 0.1;
+    ctx.strokeStyle = gradient1;
+    ctx.fillStyle = gradient1;
+    ctx.moveTo(230,260);
+    ctx.bezierCurveTo(200,260,200,290,200,300);
+    ctx.bezierCurveTo(200,290,210,280,230,280);
+    ctx.lineTo(230,260);
+    ctx.fill();
+    ctx.closePath();
+
+    
+    ctx.beginPath();
+    ctx.lineWidth = 0.1;
+    ctx.fillStyle = gradient1;
+    ctx.arc(220,320,20, 0.75 * Math.PI, 1.5 * Math.PI);
+    ctx.lineTo(220,320);
+    ctx.fill();
+    ctx.closePath();
+
+    
+  </script>
+</body>
+</html>
